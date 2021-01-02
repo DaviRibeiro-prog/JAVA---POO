@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VelhaCss.css">    
+    <title>Document</title>
+</head>
+<body>
+    <!--Placar-->
+    <div class = 'placar' id = 'placar'><fieldset>0 X 0</fieldset></div>
+
+    <!--Tabuleiro e as Casas-->
+    <div id = 'tab' class = 'tabuleiro' onclick = 'Selecionar_Espaco()'>                
+        <div id = 'a1' class = 'espaco' name = 'espacos'></div>
+        <div id = 'a2' class = 'espaco' name = 'espacos'></div>
+        <div id = 'a3' class = 'espaco' name = 'espacos'></div>
+
+        <div id = 'b1' class = 'espaco' name = 'espacos'></div>
+        <div id = 'b2' class = 'espaco' name = 'espacos'></div>
+        <div id = 'b3' class = 'espaco' name = 'espacos'></div>
+
+        <div id = 'c1' class = 'espaco' name = 'espacos'></div>
+        <div id = 'c2' class = 'espaco' name = 'espacos'></div>
+        <div id = 'c3' class = 'espaco' name = 'espacos'></div>
+    </div>
+    <input display = 'none' id = 'botao_reiniciar' class = 'reiniciar' type="button" value="reiniciar" onclick = 'reiniciar()'>
+
+    <!--Aonde vai ficar 'Jogador X e Jogador O'-->
+    <div class = 'Menu_Versus_X' id = 'Menu_Versus_X'></div>
+    <div class = 'Menu_Versus_O' id = 'Menu_Versus_O'></div>
+    <script src="VelhaScript.js"></script>
+</body>
+</html>
