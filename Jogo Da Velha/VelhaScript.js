@@ -67,13 +67,13 @@ function Selecionar_Espaco(){  //(JOGO SE BASEA NESSA FUNCTION)
             if (pontos_X < 2){     
                 pontos_X += 1
                 contagem_para_empate = 0
-                window.alert(` Rodada ganhada pelo(a) ${jogador1.toUpperCase} ( X ) ! `)
+                window.alert(` Rodada ganhada pelo(a) ${jogador1} ( X ) ! `)
                 espacos.forEach(function(n){
                     n.innerHTML = ''
                 });
 
             }else{           //Se o ponto de X for NÃO for menor que dois (quer dizer q vai ser  = 3) entao ele ganha (vai ate 3 pontos)
-                window.alert('VITORIA DE' + jogador1.toUpperCase + '( X )')
+                window.alert('VITORIA DE' + jogador1 + '( X )')
                 pontos_X += 1
                 vitoria = true
                 Menu_Versus_O.style.color = 'red'
@@ -95,14 +95,14 @@ function Selecionar_Espaco(){  //(JOGO SE BASEA NESSA FUNCTION)
 
                 if (pontos_O < 2){     
                     pontos_O += 1
-                    window.alert(` Rodada ganhada pelo(a) ${jogador2.toUpperCase} ( O ) ! `)
+                    window.alert(` Rodada ganhada pelo(a) ${jogador2} ( O ) ! `)
                     contagem_para_empate = 0
                     espacos.forEach(function(n){
                         n.innerHTML = ''
                     });
 
                 }else{
-                    window.alert('VITORIA DE' + jogador2.toUpperCase + '( O )')
+                    window.alert('VITORIA DE' + jogador2 + '( O )')
                     pontos_O += 1
                     vitoria = true
                     Menu_Versus_X.style.color = 'red'
