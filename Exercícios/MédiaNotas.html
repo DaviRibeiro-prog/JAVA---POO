@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <title>EX1</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .header_principal{
+            font-size: 250%;
+            font-family: 'Staatliches', cursive;
+        }
+        fieldset{
+            background-color: white;
+            margin: auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px black;
+            position: flex;
+        }
+        select{
+            width: 50%;
+            text-align: left;
+            position: flex;
+        }
+        p{
+            font-family: 'Piedra', cursive;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class = 'header_principal'>Calculando a média das notas!</header>
+    <section>
+        <fieldset>
+            <div>
+                <p>Digite as notas: <input type="number" name="" id="nota"></p>
+            </div>
+            <div>
+                <input type="button" value="CONFIRMAR" onclick = 'calcular()'>
+                <input type="button" value="Limpar/Reiniciar" onclick = 'reiniciar()'>
+
+                <br><br>
+                <p id = 'resp'>AGUARDANDO...</p>
+                <br>
+
+                <p id = 'resp_tab'>
+                <select name="" id="tab"></select>
+                </p>
+            </div>
+        </fieldset>
+    </section>
+
+    <script>
+        var resposta = document.getElementById('resp')
+        var resposta_tabela = document.getElementById('resp_tab')
+        var tabela = document.getElementById('tab')
+        var media = 0
+        var cont = 0
+        var nota_anterior = 0 
+
+        function calcular() {
+            var n = document.getElementById('nota')
+            var nota = Number(n.value)
+            cont += 1
+
+            media = (nota_anterior + nota) / cont
+            resposta.innerHTML = `media = ${media} nota = ${nota}`
+            nota_anterior += nota
+            var item = document.createElement(`option`)
+            tabela.appendChild(item)
+
+            item.innerHTML = nota
+            resposta.innerHTML = `A media total dos numeros digitadoe e: ${media.toFixed(2)}`
+        }
+        function reiniciar(){
+            cont = 0
+            tabela.innerHTML = ``
+            resposta.innerHTML = ``
+        }
+        
+    </script>
+</body>
+</html>
