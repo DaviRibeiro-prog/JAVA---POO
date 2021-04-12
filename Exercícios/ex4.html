@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaiorAltura</title>
+</head>
+<body>
+    <header>Maior Altura</header>
+    <fieldset>
+        <section>
+            <div>
+                <p>Qual o nome da pessoa: <input type="text" name="" id="txtnome"></p>
+                <p>Qual o sexo: <input type="radio" name="radsex" id="radsex">
+                <label for="radsex">Masculino</label>
+                <input type="radio" name="radsex" id="radsex">
+                <label for="radsex">Feminino</label></p>
+                <p>E qual a altura?: <input type="number" name="" id="txtaltura"></p>
+                <input type="button" value="Confirmar Dados" onclick = 'Confirmar()'>
+            </div>
+            <div>
+                <p id = 'resp'><strong>...</strong></p>
+            </div> 
+        </section>
+    </fieldset>
+
+    <script>
+        var MaiorAltura = 0
+
+        function Confirmar(){
+            let nome = document.getElementById('txtnome')
+            let s = document.getElementsByName('radsex')
+            let saltura = document.getElementById('txtaltura')
+            let altura = Number(saltura.value)
+            let resposta = document.getElementById('resp')
+            let sexo = ''
+
+            if (s[0].checked) {
+                sexo = 'masculino'
+            }else if (s[1].checked) {
+                sexo = 'feminino'
+            }
+
+            if (altura < 0 || altura > 5) {
+                window.alert('ERROR! Altura Errada!')
+            }else if (altura > MaiorAltura){
+                MaiorAltura = altura
+                resposta.innerHTML = `A pessoa com maior altura é: ${nome.value}, do sexo ${sexo}. E sua altura é ${MaiorAltura}!`
+            }
+        }
+    </script>
+</body>
+</html>
